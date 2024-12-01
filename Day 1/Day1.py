@@ -31,9 +31,8 @@ right.sort()
 
 for i in range(len(left)):
     dif1.append(difference(left[i],right[i]))
-
-for i in range(len(left)):
     dif2.append(sim(left[i],right))
+
 
 print(sum_array(dif1))
 
