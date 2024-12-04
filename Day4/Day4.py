@@ -41,15 +41,15 @@ def masSearch(mas,array):
     for y in range(1,len(array)-1):
         for x in range(1, len(array)-1):
             if array[y][x] == mas[1]:
-                if checkX(array,mas[0],mas[2],x,y):
+                if checkX(array,mas[0],mas[1], mas[2],x,y):
                     count += 1
     return count
 
 
-def checkX(array,M,S,x,y):
+def checkX(array,M,A,S,x,y):
     pattern = (array[y-1][x-1], array[y][x], array[y+1][x+1], array[y+1][x-1], array[y-1][x+1])
     if pattern in [
-        ('M', 'A', 'S', 'M', 'S'), ('S', 'A', 'M', 'M', 'S'), ('M', 'A', 'S', 'S', 'M'), ('S', 'A', 'M', 'S', 'M'),]:
+        (M, A, S, M, S), (S, A, M, M, S), (M, A, S, S, M), (S, A, M, S, M),]:
         return True
     return False
 
